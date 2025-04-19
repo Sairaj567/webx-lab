@@ -1,23 +1,18 @@
 let expression = "";
 
-function append(value: string): void {
-  expression += value;
-  updateDisplay();
-}
+const display = document.getElementById("display") as HTMLInputElement;
 
-function clearDisplay(): void {
+const append = (val: string) => {
+  expression += val;
+  display.value = expression;
+};
+
+const clearDisplay = () => {
   expression = "";
-  updateDisplay();
-}
+  display.value = expression;
+};
 
-function calculate(): void {
-    expression = eval(expression).toString();
-  updateDisplay();
-}
-
-function updateDisplay(): void {
-  const display = document.getElementById("display") as HTMLInputElement;
-  if (display) {
-    display.value = expression;
-  }
-}
+const calculate = () => {
+  try { expression = eval(expression).toString(); } catch { expression = "Error"; }
+  display.value = expression;
+};

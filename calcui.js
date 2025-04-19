@@ -1,19 +1,19 @@
 var expression = "";
-function append(value) {
-    expression += value;
-    updateDisplay();
-}
-function clearDisplay() {
+var display = document.getElementById("display");
+var append = function (val) {
+    expression += val;
+    display.value = expression;
+};
+var clearDisplay = function () {
     expression = "";
-    updateDisplay();
-}
-function calculate() {
-    expression = eval(expression).toString();
-    updateDisplay();
-}
-function updateDisplay() {
-    var display = document.getElementById("display");
-    if (display) {
-        display.value = expression;
+    display.value = expression;
+};
+var calculate = function () {
+    try {
+        expression = eval(expression).toString();
     }
-}
+    catch (_a) {
+        expression = "Error";
+    }
+    display.value = expression;
+};
