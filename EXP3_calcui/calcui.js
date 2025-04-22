@@ -9,11 +9,6 @@ var clearDisplay = function () {
     display.value = expression;
 };
 var calculate = function () {
-    try {
-        expression = eval(expression).toString();
-    }
-    catch (_a) {
-        expression = "Error";
-    }
+    expression = eval(expression).toString();
     display.value = expression;
 };

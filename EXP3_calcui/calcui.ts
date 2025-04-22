@@ -13,6 +13,6 @@ const clearDisplay = () => {
 };
 
 const calculate = () => {
-  try { expression = eval(expression).toString(); } catch { expression = "Error"; }
+  expression = eval(expression).toString();
   display.value = expression;
 };
