@@ -1,0 +1,23 @@
+{
+  "name": "webx-lab",
+  "version": "1.0.0",
+  "description": "This repository contains experiments and projects related to WebX-Lab. It serves as a workspace for exploring and testing various web development concepts and ideas.",
+  "main": "calcui.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sairaj567/webx-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sairaj567/webx-lab/issues"
+  },
+  "homepage": "https://github.com/Sairaj567/webx-lab#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
