@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+  <meta charset="utf-8">
+  <title>User Registration</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="userService.js"></script>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body ng-controller="UserController">
+
+  <h1>User Registration</h1>
+
+  <form name="regForm" ng-submit="submitForm()" novalidate>
+
+    <label>Name:</label>
+    <input type="text" name="name" ng-model="user.name" required />
+    <span class="error" ng-show="regForm.name.$touched && regForm.name.$invalid">
+      Name is required.
+    </span><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" ng-model="user.email" required />
+    <span class="error" ng-show="regForm.email.$touched && regForm.email.$invalid">
+      Valid email is required.
+    </span><br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" ng-model="user.password" ng-minlength="6" required />
+    <span class="error" ng-show="regForm.password.$touched && regForm.password.$invalid">
+      Password (min 6 chars) required.
+    </span><br><br>
+
+    <button type="submit" ng-disabled="regForm.$invalid">Register</button>
+  </form>
+
+  <p class="success" ng-if="message">{{ message }}</p>
+
+</body>
+</html>
